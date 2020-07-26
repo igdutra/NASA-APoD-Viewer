@@ -7,19 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5CCC6E924CE027100BFE5BF /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */; };
+		C5CCC6EC24CE036D00BFE5BF /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6EB24CE036D00BFE5BF /* PhotoInfo.swift */; };
+		C5CCC6EE24CE0B8B00BFE5BF /* PhotoInfoServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6ED24CE0B8B00BFE5BF /* PhotoInfoServices.swift */; };
+		C5DA483824CE181700058FDB /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA483724CE181700058FDB /* ViewCodable.swift */; };
+		C5DA483C24CE198800058FDB /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA483B24CE198800058FDB /* PhotoView.swift */; };
+		C5DA483E24CE23F900058FDB /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA483D24CE23F900058FDB /* PhotoViewModel.swift */; };
+		C5DA484024CE343C00058FDB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA483F24CE343C00058FDB /* UIView+Extension.swift */; };
 		C5F434A224CDDC8A00A2C621 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F434A124CDDC8A00A2C621 /* AppDelegate.swift */; };
 		C5F434A424CDDC8A00A2C621 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F434A324CDDC8A00A2C621 /* SceneDelegate.swift */; };
-		C5F434A624CDDC8A00A2C621 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F434A524CDDC8A00A2C621 /* ViewController.swift */; };
+		C5F434A624CDDC8A00A2C621 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F434A524CDDC8A00A2C621 /* PhotoViewController.swift */; };
 		C5F434A924CDDC8A00A2C621 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F434A724CDDC8A00A2C621 /* Main.storyboard */; };
 		C5F434AB24CDDC8C00A2C621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5F434AA24CDDC8C00A2C621 /* Assets.xcassets */; };
 		C5F434AE24CDDC8C00A2C621 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F434AC24CDDC8C00A2C621 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		C5CCC6EB24CE036D00BFE5BF /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
+		C5CCC6ED24CE0B8B00BFE5BF /* PhotoInfoServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoServices.swift; sourceTree = "<group>"; };
+		C5DA483724CE181700058FDB /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
+		C5DA483B24CE198800058FDB /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		C5DA483D24CE23F900058FDB /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		C5DA483F24CE343C00058FDB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C5F4349E24CDDC8A00A2C621 /* NASA APoD Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NASA APoD Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F434A124CDDC8A00A2C621 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5F434A324CDDC8A00A2C621 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C5F434A524CDDC8A00A2C621 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C5F434A524CDDC8A00A2C621 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		C5F434A824CDDC8A00A2C621 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5F434AA24CDDC8C00A2C621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5F434AD24CDDC8C00A2C621 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +51,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C5CCC6E524CE020800BFE5BF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C5CCC6EA24CE034B00BFE5BF /* Extensions */,
+				C5CCC6EB24CE036D00BFE5BF /* PhotoInfo.swift */,
+				C5DA483724CE181700058FDB /* ViewCodable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C5CCC6E724CE024A00BFE5BF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C5DA483924CE18E700058FDB /* Photo */,
+				C5DA483A24CE18EF00058FDB /* Detail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C5CCC6EA24CE034B00BFE5BF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */,
+				C5DA483F24CE343C00058FDB /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C5CCC6EF24CE0B9000BFE5BF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C5CCC6ED24CE0B8B00BFE5BF /* PhotoInfoServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C5DA483924CE18E700058FDB /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				C5F434A524CDDC8A00A2C621 /* PhotoViewController.swift */,
+				C5DA483B24CE198800058FDB /* PhotoView.swift */,
+				C5DA483D24CE23F900058FDB /* PhotoViewModel.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		C5DA483A24CE18EF00058FDB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		C5F4349524CDDC8A00A2C621 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +123,15 @@
 		C5F434A024CDDC8A00A2C621 /* NASA APoD Viewer */ = {
 			isa = PBXGroup;
 			children = (
-				C5F434A124CDDC8A00A2C621 /* AppDelegate.swift */,
-				C5F434A324CDDC8A00A2C621 /* SceneDelegate.swift */,
-				C5F434A524CDDC8A00A2C621 /* ViewController.swift */,
+				C5CCC6E724CE024A00BFE5BF /* Modules */,
+				C5CCC6EF24CE0B9000BFE5BF /* Services */,
+				C5CCC6E524CE020800BFE5BF /* Helpers */,
 				C5F434A724CDDC8A00A2C621 /* Main.storyboard */,
 				C5F434AA24CDDC8C00A2C621 /* Assets.xcassets */,
 				C5F434AC24CDDC8C00A2C621 /* LaunchScreen.storyboard */,
 				C5F434AF24CDDC8C00A2C621 /* Info.plist */,
+				C5F434A324CDDC8A00A2C621 /* SceneDelegate.swift */,
+				C5F434A124CDDC8A00A2C621 /* AppDelegate.swift */,
 			);
 			path = "NASA APoD Viewer";
 			sourceTree = "<group>";
@@ -160,9 +229,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5F434A624CDDC8A00A2C621 /* ViewController.swift in Sources */,
+				C5F434A624CDDC8A00A2C621 /* PhotoViewController.swift in Sources */,
+				C5CCC6E924CE027100BFE5BF /* URL+Extension.swift in Sources */,
+				C5CCC6EE24CE0B8B00BFE5BF /* PhotoInfoServices.swift in Sources */,
 				C5F434A224CDDC8A00A2C621 /* AppDelegate.swift in Sources */,
+				C5DA483E24CE23F900058FDB /* PhotoViewModel.swift in Sources */,
+				C5DA483824CE181700058FDB /* ViewCodable.swift in Sources */,
 				C5F434A424CDDC8A00A2C621 /* SceneDelegate.swift in Sources */,
+				C5CCC6EC24CE036D00BFE5BF /* PhotoInfo.swift in Sources */,
+				C5DA484024CE343C00058FDB /* UIView+Extension.swift in Sources */,
+				C5DA483C24CE198800058FDB /* PhotoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
