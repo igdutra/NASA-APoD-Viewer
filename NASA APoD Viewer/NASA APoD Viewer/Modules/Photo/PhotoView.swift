@@ -37,31 +37,48 @@ class PhotoView: UIView {
     }
 }
 
+    // MARK: - Table View
+
 extension PhotoView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
-        return viewModel.photos.count
+        return viewModel.photosT.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let viewModel = viewModel else { return UITableViewCell() }
 
-        if let cell = tableView.dequeueReusableCell(withIdentifier: photoTableViewCellId) {
-            cell.textLabel?.text = String(viewModel.photos[indexPath.row])
+        if let cell = tableView.dequeueReusableCell(withIdentifier: photoTableViewCellId) as? PhotoTableViewCell {
+            cell.centralImageView.image = viewModel.image
+            
+            return cell
         }
-        
+
         return UITableViewCell()
     }
 
 }
+
+extension PhotoView: PhotoViewModelDelegate {
+
+    /// Reload Table View on the main Thread
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+
+}
+
+    // MARK: - View Codable
 
 extension PhotoView: ViewCodable {
 
     func configure() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: photoTableViewCellId)
+        tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: photoTableViewCellId)
     }
 
     func setupHierarchy() {
@@ -71,21 +88,16 @@ extension PhotoView: ViewCodable {
     func setupConstraints() {
 
         tableView.setConstraints { (view) in
-            view.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
+            view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
             view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
             view.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
             view.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         }
-
     }
 
-    func render() {
+    func render() { }
 
-    }
-
-    func updateView() {
-
-    }
+    func updateView() { }
 
     // MARK: - View Codable Helpers
 

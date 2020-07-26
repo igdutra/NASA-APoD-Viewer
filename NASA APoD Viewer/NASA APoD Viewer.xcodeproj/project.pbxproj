@@ -14,6 +14,8 @@
 		C5DA483C24CE198800058FDB /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA483B24CE198800058FDB /* PhotoView.swift */; };
 		C5DA483E24CE23F900058FDB /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA483D24CE23F900058FDB /* PhotoViewModel.swift */; };
 		C5DA484024CE343C00058FDB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA483F24CE343C00058FDB /* UIView+Extension.swift */; };
+		C5DA484324CE392800058FDB /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA484224CE392800058FDB /* PhotoTableViewCell.swift */; };
+		C5DA484524CE3E9900058FDB /* UIImage+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA484424CE3E9900058FDB /* UIImage+Assets.swift */; };
 		C5F434A224CDDC8A00A2C621 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F434A124CDDC8A00A2C621 /* AppDelegate.swift */; };
 		C5F434A424CDDC8A00A2C621 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F434A324CDDC8A00A2C621 /* SceneDelegate.swift */; };
 		C5F434A624CDDC8A00A2C621 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F434A524CDDC8A00A2C621 /* PhotoViewController.swift */; };
@@ -30,6 +32,8 @@
 		C5DA483B24CE198800058FDB /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		C5DA483D24CE23F900058FDB /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		C5DA483F24CE343C00058FDB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C5DA484224CE392800058FDB /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		C5DA484424CE3E9900058FDB /* UIImage+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Assets.swift"; sourceTree = "<group>"; };
 		C5F4349E24CDDC8A00A2C621 /* NASA APoD Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NASA APoD Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F434A124CDDC8A00A2C621 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5F434A324CDDC8A00A2C621 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			children = (
 				C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */,
 				C5DA483F24CE343C00058FDB /* UIView+Extension.swift */,
+				C5DA484424CE3E9900058FDB /* UIImage+Assets.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -90,9 +95,10 @@
 		C5DA483924CE18E700058FDB /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				C5DA484124CE391700058FDB /* Cell */,
 				C5F434A524CDDC8A00A2C621 /* PhotoViewController.swift */,
-				C5DA483B24CE198800058FDB /* PhotoView.swift */,
 				C5DA483D24CE23F900058FDB /* PhotoViewModel.swift */,
+				C5DA483B24CE198800058FDB /* PhotoView.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -102,6 +108,14 @@
 			children = (
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		C5DA484124CE391700058FDB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C5DA484224CE392800058FDB /* PhotoTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C5F4349524CDDC8A00A2C621 = {
@@ -239,6 +253,8 @@
 				C5CCC6EC24CE036D00BFE5BF /* PhotoInfo.swift in Sources */,
 				C5DA484024CE343C00058FDB /* UIView+Extension.swift in Sources */,
 				C5DA483C24CE198800058FDB /* PhotoView.swift in Sources */,
+				C5DA484524CE3E9900058FDB /* UIImage+Assets.swift in Sources */,
+				C5DA484324CE392800058FDB /* PhotoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

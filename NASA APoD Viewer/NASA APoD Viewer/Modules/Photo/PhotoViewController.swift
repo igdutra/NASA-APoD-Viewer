@@ -32,7 +32,7 @@ class PhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let photoViewModel = PhotoViewModel()
+        let photoViewModel = PhotoViewModel(delegate: myView, service: PhotoInfoServices())
 
         viewModel = photoViewModel
         myView.viewModel = viewModel

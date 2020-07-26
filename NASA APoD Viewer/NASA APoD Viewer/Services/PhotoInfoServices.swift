@@ -8,8 +8,12 @@
 
 import Foundation
 
+protocol PhotoInfoServicesProtocol {
+    func fetchPhotoInfo(completion: @escaping (PhotoInfo?) -> Void)
+}
+
 /// Services Layer for PhotoInfo
-class PhotoInfoServices {
+class PhotoInfoServices: PhotoInfoServicesProtocol {
 
     let baseURL = URL(string: "https://api.nasa.gov/planetary/apod")!
     /// NASA developer key
@@ -19,9 +23,11 @@ class PhotoInfoServices {
 
     func fetchPhotoInfo(completion: @escaping (PhotoInfo?) -> Void) {
 
+        // TODO: now() - 5 days and only media type photo
+
         // This dictionary is used to construct the URL using URLComponents
         let query: [String: String] = [
-//            "date": "2020-07-24",
+            "date": "2020-07-24",
             "api_key": apiKey
         ]
         let url = baseURL.withQueries(query)!
@@ -61,20 +67,13 @@ class PhotoInfoServices {
 
         // ERROR WHILE PERFORMING THE REQUEST.
 
-        // ai da o ok.
-
-        // ONDE NA ARQUITETURA COLOCAR ISSO?
-        // GREAT QUESTION.
+        // Where?
     }
 
     func handleServerError(_ response: URLResponse?) {
 
         // SERVER is down - ver algum dos erros?
 
-        // ai da o ok.
-
-        // ONDE NA ARQUITETURA COLOCAR ISSO?
-        // GREAT QUESTION.
     }
 
 }
