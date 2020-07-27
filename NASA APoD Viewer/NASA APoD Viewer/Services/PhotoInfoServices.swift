@@ -27,7 +27,7 @@ class PhotoInfoServices: PhotoInfoServicesProtocol {
 
         // This dictionary is used to construct the URL using URLComponents
         let query: [String: String] = [
-            "date": "2020-07-24",
+            "date": "2020-07-23",
             "api_key": apiKey
         ]
         let url = baseURL.withQueries(query)!
@@ -64,15 +64,10 @@ class PhotoInfoServices: PhotoInfoServicesProtocol {
     // MARK: - Errors
 
     func handleClientError(_ error: Error) {
-
-        // ERROR WHILE PERFORMING THE REQUEST.
-
-        // Where?
+    
     }
 
     func handleServerError(_ response: URLResponse?) {
-
-        // SERVER is down - ver algum dos erros?
 
     }
 

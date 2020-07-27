@@ -44,11 +44,13 @@ extension PhotoTableViewCell: ViewCodable {
     }
 
     func setupConstraints() {
+
         centralImageView.setConstraints { (view) in
+            // Pin View to borders
             view.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
             view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
-            view.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-            view.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+            view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8).isActive = true
+            view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
         }
     }
 

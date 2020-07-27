@@ -62,7 +62,7 @@ class PhotoViewModel: PhotoViewModelProtocol {
                     guard let data = data, let image = UIImage(data: data) else { return }
 
                     // Load image and reload tableView
-                    self.image = image
+                    self.image = self.resizedImage(image)
                     self.delegate?.reloadTableView()
                 }
 
@@ -72,4 +72,22 @@ class PhotoViewModel: PhotoViewModelProtocol {
         }
     }
 
+    /// Calculate image correct size, based on device width
+    func resizedImage(_ image: UIImage) -> UIImage {
+
+        // Calculate resize ratio based on the device width (-16 to leading and trailing anchors)
+        let resizeRatio = (UIScreen.main.bounds.width - 16) / image.size.width
+        // Apply same ratio to both dimensions, in order to respect its aspect Ratio
+        let size = image.size.applying(CGAffineTransform(scaleX: resizeRatio, y: resizeRatio))
+        let hasAlpha = true
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+
+        UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
+        image.draw(in: CGRect(origin: .zero, size: size))
+
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage?.withRoundedCorners(radius: 12) ?? UIImage()
+    }
 }
