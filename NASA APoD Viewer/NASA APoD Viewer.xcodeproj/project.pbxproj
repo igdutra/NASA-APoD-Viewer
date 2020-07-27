@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C598F75E24CF756C00242878 /* PhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598F75D24CF756C00242878 /* PhotoTableViewCellViewModel.swift */; };
 		C5CCC6E924CE027100BFE5BF /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */; };
 		C5CCC6EC24CE036D00BFE5BF /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6EB24CE036D00BFE5BF /* PhotoInfo.swift */; };
 		C5CCC6EE24CE0B8B00BFE5BF /* PhotoInfoServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6ED24CE0B8B00BFE5BF /* PhotoInfoServices.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C598F75D24CF756C00242878 /* PhotoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		C5CCC6EB24CE036D00BFE5BF /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 		C5CCC6ED24CE0B8B00BFE5BF /* PhotoInfoServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoServices.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				C5DA484224CE392800058FDB /* PhotoTableViewCell.swift */,
+				C598F75D24CF756C00242878 /* PhotoTableViewCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				C5F434A424CDDC8A00A2C621 /* SceneDelegate.swift in Sources */,
 				C5CCC6EC24CE036D00BFE5BF /* PhotoInfo.swift in Sources */,
 				C5DA484024CE343C00058FDB /* UIView+Extension.swift in Sources */,
+				C598F75E24CF756C00242878 /* PhotoTableViewCellViewModel.swift in Sources */,
 				C5DA483C24CE198800058FDB /* PhotoView.swift in Sources */,
 				C5DA484524CE3E9900058FDB /* UIImage+Extension.swift in Sources */,
 				C5DA484324CE392800058FDB /* PhotoTableViewCell.swift in Sources */,

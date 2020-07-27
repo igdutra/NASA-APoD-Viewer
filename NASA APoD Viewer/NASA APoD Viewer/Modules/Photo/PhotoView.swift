@@ -43,14 +43,16 @@ extension PhotoView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
-        return viewModel.photosT.count
+        return viewModel.days.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let viewModel = viewModel else { return UITableViewCell() }
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: photoTableViewCellId) as? PhotoTableViewCell {
-            cell.centralImageView.image = viewModel.image
+            let day = viewModel.days[indexPath.row]
+            let cellViewModel = PhotoTableViewCellViewModel(delegate: cell, service: PhotoInfoServices(), day: day)
+            cell.viewModel = cellViewModel
             
             return cell
         }
@@ -59,6 +61,8 @@ extension PhotoView: UITableViewDelegate, UITableViewDataSource {
     }
 
 }
+
+    // MARK: - Delegate
 
 extension PhotoView: PhotoViewModelDelegate {
 

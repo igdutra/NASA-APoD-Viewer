@@ -8,8 +8,10 @@
 
 import Foundation
 
+// TODO: only photo as media type
+
 protocol PhotoInfoServicesProtocol {
-    func fetchPhotoInfo(completion: @escaping (PhotoInfo?) -> Void)
+     func fetchPhotoInfo(onDay: String, completion: @escaping (PhotoInfo?) -> Void)
 }
 
 /// Services Layer for PhotoInfo
@@ -21,13 +23,11 @@ class PhotoInfoServices: PhotoInfoServicesProtocol {
 
     // MARK: - Fetch
 
-    func fetchPhotoInfo(completion: @escaping (PhotoInfo?) -> Void) {
-
-        // TODO: now() - 5 days and only media type photo
+    func fetchPhotoInfo(onDay day: String, completion: @escaping (PhotoInfo?) -> Void) {
 
         // This dictionary is used to construct the URL using URLComponents
         let query: [String: String] = [
-            "date": "2020-07-23",
+            "date": day,
             "api_key": apiKey
         ]
         let url = baseURL.withQueries(query)!

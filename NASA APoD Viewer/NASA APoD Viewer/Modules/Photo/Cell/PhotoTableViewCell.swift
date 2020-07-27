@@ -12,6 +12,7 @@ class PhotoTableViewCell: UITableViewCell {
 
     // MARK: - Properties
     var centralImageView: UIImageView
+    var viewModel: PhotoTableViewCellViewModel?
 
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -25,6 +26,18 @@ class PhotoTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+    // MARK: - Delegate
+
+extension PhotoTableViewCell: PhotoTableViewCellViewDelegate {
+
+    func reloadImage() {
+        DispatchQueue.main.async {
+            self.centralImageView.image = self.viewModel?.image
+        }
+    }
+
 }
 
     // MARK: - View Codable
@@ -56,6 +69,8 @@ extension PhotoTableViewCell: ViewCodable {
 
     func render() { }
 
-    func updateView() { }
+    func updateView() {
+        
+    }
 
 }
