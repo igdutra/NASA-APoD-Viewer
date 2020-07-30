@@ -32,12 +32,6 @@ class PhotoTableViewCell: UITableViewCell {
 
 extension PhotoTableViewCell: PhotoTableViewCellViewDelegate {
 
-    func reloadImage() {
-        DispatchQueue.main.async {
-            self.centralImageView.image = self.viewModel?.image
-        }
-    }
-
 }
 
     // MARK: - View Codable

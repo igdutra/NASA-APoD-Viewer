@@ -14,8 +14,6 @@ class PhotoViewController: UIViewController {
 
     var viewModel: PhotoViewModelProtocol?
 
-//    weak var navigationDelegate: SearchResultsViewModelDelegate?
-
     private var myView: PhotoView {
         // swiftlint:disable force_cast
         return view as! PhotoView
@@ -31,14 +29,13 @@ class PhotoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: add logic to catch last 5 days
-        self.title = "Last 5 days photos"
+        // TODO: add logic to catch last the current week
+        self.title = "Last week photos"
 
         let photoViewModel = PhotoViewModel(delegate: myView, service: PhotoInfoServices())
 
         viewModel = photoViewModel
         myView.viewModel = viewModel
 
-//        viewModel.navigationDelegate = self
     }
 }
