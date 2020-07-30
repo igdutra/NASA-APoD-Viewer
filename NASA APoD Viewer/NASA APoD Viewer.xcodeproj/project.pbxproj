@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C537F06424D2551200133B52 /* NASA_APoD_Viewer_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537F06324D2551200133B52 /* NASA_APoD_Viewer_Tests.swift */; };
+		C537F06E24D2686200133B52 /* PhotoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537F06D24D2686200133B52 /* PhotoViewModelTests.swift */; };
+		C537F07124D269AB00133B52 /* PhotoViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537F07024D269AB00133B52 /* PhotoViewMock.swift */; };
+		C537F07324D26B4F00133B52 /* PhotoInfoServicesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537F07224D26B4F00133B52 /* PhotoInfoServicesMock.swift */; };
 		C598F75E24CF756C00242878 /* PhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598F75D24CF756C00242878 /* PhotoTableViewCellViewModel.swift */; };
 		C5CCC6E924CE027100BFE5BF /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */; };
 		C5CCC6EC24CE036D00BFE5BF /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6EB24CE036D00BFE5BF /* PhotoInfo.swift */; };
@@ -36,8 +38,10 @@
 
 /* Begin PBXFileReference section */
 		C537F06124D2551200133B52 /* NASA APoD Viewer Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NASA APoD Viewer Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C537F06324D2551200133B52 /* NASA_APoD_Viewer_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASA_APoD_Viewer_Tests.swift; sourceTree = "<group>"; };
 		C537F06524D2551200133B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C537F06D24D2686200133B52 /* PhotoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModelTests.swift; sourceTree = "<group>"; };
+		C537F07024D269AB00133B52 /* PhotoViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewMock.swift; sourceTree = "<group>"; };
+		C537F07224D26B4F00133B52 /* PhotoInfoServicesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoServicesMock.swift; sourceTree = "<group>"; };
 		C598F75D24CF756C00242878 /* PhotoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		C5CCC6EB24CE036D00BFE5BF /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
@@ -78,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				C537F06B24D2552700133B52 /* Module */,
-				C537F06324D2551200133B52 /* NASA_APoD_Viewer_Tests.swift */,
 				C537F06524D2551200133B52 /* Info.plist */,
 			);
 			path = "NASA APoD Viewer Tests";
@@ -95,8 +98,19 @@
 		C537F06C24D2552F00133B52 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				C537F06F24D2697100133B52 /* Mocks */,
+				C537F06D24D2686200133B52 /* PhotoViewModelTests.swift */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		C537F06F24D2697100133B52 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C537F07024D269AB00133B52 /* PhotoViewMock.swift */,
+				C537F07224D26B4F00133B52 /* PhotoInfoServicesMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		C5CCC6E524CE020800BFE5BF /* Helpers */ = {
@@ -317,7 +331,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C537F06424D2551200133B52 /* NASA_APoD_Viewer_Tests.swift in Sources */,
+				C537F07124D269AB00133B52 /* PhotoViewMock.swift in Sources */,
+				C537F07324D26B4F00133B52 /* PhotoInfoServicesMock.swift in Sources */,
+				C537F06E24D2686200133B52 /* PhotoViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
