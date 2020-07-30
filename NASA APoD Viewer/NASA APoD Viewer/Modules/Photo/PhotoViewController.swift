@@ -31,6 +31,8 @@ class PhotoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // TODO: add logic to catch last 5 days
+        self.title = "Last 5 days photos"
 
         let photoViewModel = PhotoViewModel(delegate: myView, service: PhotoInfoServices())
 
