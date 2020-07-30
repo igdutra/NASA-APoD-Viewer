@@ -11,6 +11,9 @@
 		C537F07124D269AB00133B52 /* PhotoViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537F07024D269AB00133B52 /* PhotoViewMock.swift */; };
 		C537F07324D26B4F00133B52 /* PhotoInfoServicesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537F07224D26B4F00133B52 /* PhotoInfoServicesMock.swift */; };
 		C590EBBC24D3029000AF9049 /* PhotoInfoServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C590EBBB24D3029000AF9049 /* PhotoInfoServicesTests.swift */; };
+		C590EBBE24D30DC600AF9049 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C590EBBD24D30DC600AF9049 /* UIFont+Extension.swift */; };
+		C590EBC324D30EE200AF9049 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C590EBC124D30EE200AF9049 /* Poppins-Regular.ttf */; };
+		C590EBC424D30EE200AF9049 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C590EBC224D30EE200AF9049 /* Poppins-SemiBold.ttf */; };
 		C598F75E24CF756C00242878 /* PhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598F75D24CF756C00242878 /* PhotoTableViewCellViewModel.swift */; };
 		C5CCC6E924CE027100BFE5BF /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */; };
 		C5CCC6EC24CE036D00BFE5BF /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6EB24CE036D00BFE5BF /* PhotoInfo.swift */; };
@@ -44,6 +47,9 @@
 		C537F07024D269AB00133B52 /* PhotoViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewMock.swift; sourceTree = "<group>"; };
 		C537F07224D26B4F00133B52 /* PhotoInfoServicesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoServicesMock.swift; sourceTree = "<group>"; };
 		C590EBBB24D3029000AF9049 /* PhotoInfoServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoServicesTests.swift; sourceTree = "<group>"; };
+		C590EBBD24D30DC600AF9049 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		C590EBC124D30EE200AF9049 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		C590EBC224D30EE200AF9049 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		C598F75D24CF756C00242878 /* PhotoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		C5CCC6EB24CE036D00BFE5BF /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
@@ -124,6 +130,24 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		C590EBBF24D30E2500AF9049 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C5F434AA24CDDC8C00A2C621 /* Assets.xcassets */,
+				C590EBC024D30E2B00AF9049 /* Font */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C590EBC024D30E2B00AF9049 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				C590EBC124D30EE200AF9049 /* Poppins-Regular.ttf */,
+				C590EBC224D30EE200AF9049 /* Poppins-SemiBold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		C5CCC6E524CE020800BFE5BF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +173,7 @@
 				C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */,
 				C5DA483F24CE343C00058FDB /* UIView+Extension.swift */,
 				C5DA484424CE3E9900058FDB /* UIImage+Extension.swift */,
+				C590EBBD24D30DC600AF9049 /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,13 +234,13 @@
 		C5F434A024CDDC8A00A2C621 /* NASA APoD Viewer */ = {
 			isa = PBXGroup;
 			children = (
+				C5F434A124CDDC8A00A2C621 /* AppDelegate.swift */,
 				C5CCC6E724CE024A00BFE5BF /* Modules */,
 				C5CCC6EF24CE0B9000BFE5BF /* Services */,
 				C5CCC6E524CE020800BFE5BF /* Helpers */,
-				C5F434AA24CDDC8C00A2C621 /* Assets.xcassets */,
+				C590EBBF24D30E2500AF9049 /* Resource */,
 				C5F434AC24CDDC8C00A2C621 /* LaunchScreen.storyboard */,
 				C5F434AF24CDDC8C00A2C621 /* Info.plist */,
-				C5F434A124CDDC8A00A2C621 /* AppDelegate.swift */,
 			);
 			path = "NASA APoD Viewer";
 			sourceTree = "<group>";
@@ -309,6 +334,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C590EBC324D30EE200AF9049 /* Poppins-Regular.ttf in Resources */,
+				C590EBC424D30EE200AF9049 /* Poppins-SemiBold.ttf in Resources */,
 				C5F434AE24CDDC8C00A2C621 /* LaunchScreen.storyboard in Resources */,
 				C5F434AB24CDDC8C00A2C621 /* Assets.xcassets in Resources */,
 			);
@@ -363,6 +390,7 @@
 				C5DA484024CE343C00058FDB /* UIView+Extension.swift in Sources */,
 				C598F75E24CF756C00242878 /* PhotoTableViewCellViewModel.swift in Sources */,
 				C5DA483C24CE198800058FDB /* PhotoView.swift in Sources */,
+				C590EBBE24D30DC600AF9049 /* UIFont+Extension.swift in Sources */,
 				C5DA484524CE3E9900058FDB /* UIImage+Extension.swift in Sources */,
 				C5DA484324CE392800058FDB /* PhotoTableViewCell.swift in Sources */,
 			);

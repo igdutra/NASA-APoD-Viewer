@@ -16,8 +16,9 @@ protocol PhotoViewModelDelegate: class {
 /// So that we can UnitTest
 protocol PhotoViewModelProtocol {
     var delegate: PhotoViewModelDelegate? { get set }
-    var days: [String] { get set }
+    var photoInfos: [PhotoInfo] { get set }
     var images: [UIImage?] { get set }
+    var days: [String] { get set }
 }
 
 class PhotoViewModel: PhotoViewModelProtocol {

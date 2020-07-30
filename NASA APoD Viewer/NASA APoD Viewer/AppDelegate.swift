@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let navigationController = UINavigationController(rootViewController: PhotoViewController())
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.Default.semibold]
 
         // Remove Main.storyboard dependency
         window = UIWindow(frame: UIScreen.main.bounds)
