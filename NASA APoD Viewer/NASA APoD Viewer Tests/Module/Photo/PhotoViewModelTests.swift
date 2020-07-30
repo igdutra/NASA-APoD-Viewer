@@ -30,27 +30,27 @@ class PhotoViewModelTests: XCTestCase {
         super.tearDown()
     }
 
-    // MARK: - delegate reload
+    // MARK: - Delegate reload
 
     func testReloadTableView() {
+
+        // Delegate's method is called at images didSet
         sut.images.append(UIImage())
 
         XCTAssert(photoViewMock.called)
     }
 
-    // MARK: - resize
+    // MARK: - Resize
 
     func testResizeImage() {
+        // Load a image from Assets.xcassets, 1024 × 682.
         let rocket = UIImage(named: "rocket")
-
-        // This image is 1024 × 682.
-
-        let resizedImage = sut.resizedImage(rocket!, toFitWidth: UIScreen.main.bounds.width)
-
+         // And then calculate its correct new height
         let aspectRatio = (UIScreen.main.bounds.width - 16) / (rocket?.size.width)!
-
         let newHeight = (rocket?.size.height)! * aspectRatio
 
+        // Check if method produces the same height
+        let resizedImage = sut.resizedImage(rocket!, toFitIn: UIScreen.main.bounds.width)
         XCTAssertEqual(resizedImage.size.height, newHeight, accuracy: 1)
     }
 

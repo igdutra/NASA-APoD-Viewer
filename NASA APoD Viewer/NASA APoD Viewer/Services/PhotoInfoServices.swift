@@ -17,12 +17,13 @@ protocol PhotoInfoServicesProtocol {
 /// Services Layer for PhotoInfo
 class PhotoInfoServices: PhotoInfoServicesProtocol {
 
-    let baseURL = URL(string: "https://api.nasa.gov/planetary/apod")!
+    var baseURL = URL(string: "https://api.nasa.gov/planetary/apod")!
     /// NASA developer key
     let apiKey = "ymJRGZeMRKlbhAmjXO2cGI4rPfjTLGbyrm87EeMu"
 
     // MARK: - Fetch
 
+    /// Fetch a photo on a day at the NASA Astronomy Picture of the Day API
     func fetchPhotoInfo(onDay day: String, completion: @escaping (PhotoInfo?) -> Void) {
 
         // This dictionary is used to construct the URL using URLComponents
