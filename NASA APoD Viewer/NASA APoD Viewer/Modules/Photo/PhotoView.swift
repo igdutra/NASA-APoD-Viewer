@@ -15,11 +15,7 @@ class PhotoView: UIView {
     var tableView: UITableView
     var photoTableViewCellId: String
 
-    var viewModel: PhotoViewModelProtocol? {
-        didSet {
-            updateView()
-        }
-    }
+    var viewModel: PhotoViewModelProtocol?
 
     // MARK: - Init
 
@@ -50,14 +46,28 @@ extension PhotoView: UITableViewDelegate, UITableViewDataSource {
         guard let viewModel = viewModel else { return UITableViewCell() }
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: photoTableViewCellId) as? PhotoTableViewCell {
+            // Update CentralImageView or use the placeholder before request is finished
+            cell.centralImageView.image = viewModel.images[indexPath.row] ?? UIImage.Default.photoPlaceholder!
+
+            // Add title according to the day
             let day = viewModel.days[indexPath.row]
-            let cellViewModel = PhotoTableViewCellViewModel(delegate: cell, service: PhotoInfoServices(), day: day)
-            cell.viewModel = cellViewModel
+            cell.titleLabel.text = viewModel.photoInfos[day]?.title ?? "Title unknown"
             
             return cell
         }
 
         return UITableViewCell()
+    }
+
+    // MARK: - Navigation
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+
+        let day = viewModel.days[indexPath.row]
+        if let photo = viewModel.photoInfos[day] {
+            viewModel.navigationDelegate?.goToDetail(fromPhoto: photo)
+        }
     }
 
 }
@@ -100,8 +110,6 @@ extension PhotoView: ViewCodable {
     }
 
     func render() { }
-
-    func updateView() { }
 
     // MARK: - View Codable Helpers
 

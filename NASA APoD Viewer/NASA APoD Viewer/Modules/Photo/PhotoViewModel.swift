@@ -16,7 +16,9 @@ protocol PhotoViewModelDelegate: class {
 /// So that we can UnitTest
 protocol PhotoViewModelProtocol {
     var delegate: PhotoViewModelDelegate? { get set }
-    var image: UIImage { get set }
+    var navigationDelegate: PhotoNavigationDelegate? { get set }
+    var photoInfos: [String: PhotoInfo] { get set }
+    var images: [UIImage?] { get set }
     var days: [String] { get set }
 }
 
@@ -25,19 +27,30 @@ class PhotoViewModel: PhotoViewModelProtocol {
     // MARK: - Properties
     
     weak var delegate: PhotoViewModelDelegate?
-    var image: UIImage
+    weak var navigationDelegate: PhotoNavigationDelegate?
+    var photoInfoServices: PhotoInfoServicesProtocol
+    var photoInfos: [String: PhotoInfo]
+    var images: [UIImage?] {
+        didSet {
+            // DataSource must be reloaded when a image is set
+            delegate?.reloadTableView()
+        }
+    }
     var days: [String]
 
     // MARK: - Init
 
-    init(delegate: PhotoViewModelDelegate, service: PhotoInfoServicesProtocol) {
+    init(delegate: PhotoViewModelDelegate, service: PhotoInfoServicesProtocol, navigation: PhotoNavigationDelegate) {
         self.delegate = delegate
+        self.navigationDelegate = navigation
+        self.photoInfoServices = service
 
-        // TableView loads the placeholder first
-        image = UIImage.Default.photoPlaceholder!
+        photoInfos = [:]
+        images = []
 
         // Dates used to perform request
         days = [
+            "2020-07-18",
             "2020-07-20",
             "2020-07-21",
             "2020-07-22",
@@ -46,6 +59,74 @@ class PhotoViewModel: PhotoViewModelProtocol {
             "2020-07-25"
         ]
 
+        // Make sure that when acessing viewModel.images[indexPath.row] is not out of range
+        self.days.forEach { (_) in
+            images.append(nil)
+        }
+
+        // Fetch all 5 photos
+        getAllPhotos()
+    }
+
+    // MARK: - Get Photos
+
+    // Get's all 5 photos and save it at the image array, at its correct position
+    func getAllPhotos() {
+        for (index, day) in days.enumerated() {
+            fetchPhoto(onDay: day, { (image) in
+                // Save image in the array, resized according to the device width
+                self.images[index] = self.resizedImage(image, toFitIn: UIScreen.main.bounds.width)
+            })
+        }
+
+    }
+
+    /// Fetches one photo of the day
+    func fetchPhoto(onDay day: String, _ completion: @escaping (UIImage) -> Void) {
+
+        photoInfoServices.fetchPhotoInfo(onDay: day) { (infos) in
+            if let info = infos {
+                // Save photo details
+                self.photoInfos[day] = info
+                // Request the image
+                let imageTask = URLSession.shared.dataTask(with: info.url) { (data, _, _) in
+                    guard let data = data, let image = UIImage(data: data) else { return }
+
+                    // The image should be saved at the correct position from the images array
+                    completion(image)
+                }
+
+                imageTask.resume()
+            }
+        }
+    }
+
+    // MARK: - Navigation
+
+    func goToDetail(fromPhoto info: PhotoInfo) {
+        navigationDelegate?.goToDetail(fromPhoto: info)
+    }
+
+    // MARK: - UI Image Helper
+
+    /// Calculate image correct size, based on device width
+    func resizedImage(_ image: UIImage, toFitIn width: CGFloat) -> UIImage {
+
+        // Calculate resize ratio based on the device width (-16 to leading and trailing anchors)
+        let resizeRatio = (width - 16) / image.size.width
+
+        // Apply same ratio to both dimensions, in order to respect its aspect Ratio
+        let size = image.size.applying(CGAffineTransform(scaleX: resizeRatio, y: resizeRatio))
+        let hasAlpha = true
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+
+        UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
+        image.draw(in: CGRect(origin: .zero, size: size))
+
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage?.withRoundedCorners(radius: 12) ?? UIImage()
     }
 
 }

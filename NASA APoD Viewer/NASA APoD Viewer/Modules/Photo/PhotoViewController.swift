@@ -8,13 +8,15 @@
 
 import UIKit
 
+protocol PhotoNavigationDelegate: class {
+    func goToDetail(fromPhoto: PhotoInfo)
+}
+
 class PhotoViewController: UIViewController {
 
     // MARK: - Properties
 
     var viewModel: PhotoViewModelProtocol?
-
-//    weak var navigationDelegate: SearchResultsViewModelDelegate?
 
     private var myView: PhotoView {
         // swiftlint:disable force_cast
@@ -31,14 +33,25 @@ class PhotoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: add logic to catch last 5 days
-        self.title = "Last 5 days photos"
+        // TODO: add logic to catch last the current week
+        self.title = "Last week photos"
 
-        let photoViewModel = PhotoViewModel(delegate: myView, service: PhotoInfoServices())
+        let photoViewModel = PhotoViewModel(delegate: myView,
+                                            service: PhotoInfoServices(),
+                                            navigation: self)
 
         viewModel = photoViewModel
         myView.viewModel = viewModel
-
-//        viewModel.navigationDelegate = self
     }
+}
+
+    // MARK: - Navigation
+
+extension PhotoViewController: PhotoNavigationDelegate {
+
+    func goToDetail(fromPhoto photo: PhotoInfo) {
+        let detailController = DetailViewController(info: photo)
+        self.navigationController?.pushViewController(detailController, animated: true)
+    }
+
 }
