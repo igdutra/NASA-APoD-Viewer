@@ -16,7 +16,7 @@ protocol PhotoViewModelDelegate: class {
 /// So that we can UnitTest
 protocol PhotoViewModelProtocol {
     var delegate: PhotoViewModelDelegate? { get set }
-    var photoInfos: [PhotoInfo] { get set }
+    var photoInfos: [String: PhotoInfo] { get set }
     var images: [UIImage?] { get set }
     var days: [String] { get set }
 }
@@ -27,7 +27,7 @@ class PhotoViewModel: PhotoViewModelProtocol {
     
     weak var delegate: PhotoViewModelDelegate?
     var photoInfoServices: PhotoInfoServicesProtocol
-    var photoInfos: [PhotoInfo]
+    var photoInfos: [String: PhotoInfo]
     var images: [UIImage?] {
         didSet {
             // DataSource must be reloaded when a image is set
@@ -42,7 +42,7 @@ class PhotoViewModel: PhotoViewModelProtocol {
         self.delegate = delegate
         self.photoInfoServices = service
 
-        photoInfos = []
+        photoInfos = [:]
         images = []
 
         // Dates used to perform request
@@ -84,7 +84,7 @@ class PhotoViewModel: PhotoViewModelProtocol {
         photoInfoServices.fetchPhotoInfo(onDay: day) { (infos) in
             if let info = infos {
                 // Save photo details
-                self.photoInfos.append(info)
+                self.photoInfos[day] = info
                 // Request the image
                 let imageTask = URLSession.shared.dataTask(with: info.url) { (data, _, _) in
                     guard let data = data, let image = UIImage(data: data) else { return }

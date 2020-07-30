@@ -52,6 +52,10 @@ extension PhotoView: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: photoTableViewCellId) as? PhotoTableViewCell {
             // Update CentralImageView or use the placeholder before request is finished
             cell.centralImageView.image = viewModel.images[indexPath.row] ?? UIImage.Default.photoPlaceholder!
+
+            // Add title according to the day
+            let day = viewModel.days[indexPath.row]
+            cell.titleLabel.text = viewModel.photoInfos[day]?.title ?? ""
             
             return cell
         }
