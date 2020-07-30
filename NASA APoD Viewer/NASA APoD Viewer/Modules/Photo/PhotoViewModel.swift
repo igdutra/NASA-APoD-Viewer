@@ -29,9 +29,9 @@ class PhotoViewModel: PhotoViewModelProtocol {
     var photoInfos: [PhotoInfo]
     var images: [UIImage?] {
         didSet {
+            // DataSource must be reloaded when a image is set
             delegate?.reloadTableView()
         }
-
     }
     var days: [String]
 
@@ -71,7 +71,7 @@ class PhotoViewModel: PhotoViewModelProtocol {
         for (index, day) in days.enumerated() {
             fetchPhoto(onDay: day, { (image) in
                 // Save image in the array, resized according to the device width
-                self.images[index] = self.resizedImage(image)
+                self.images[index] = self.resizedImage(image, toFitWidth: UIScreen.main.bounds.width)
             })
         }
 
@@ -100,10 +100,11 @@ class PhotoViewModel: PhotoViewModelProtocol {
     // MARK: - UI Image Helper
 
     /// Calculate image correct size, based on device width
-    func resizedImage(_ image: UIImage) -> UIImage {
+    func resizedImage(_ image: UIImage, toFitWidth width: CGFloat) -> UIImage {
 
         // Calculate resize ratio based on the device width (-16 to leading and trailing anchors)
-        let resizeRatio = (UIScreen.main.bounds.width - 16) / image.size.width
+        let resizeRatio = (width - 16) / image.size.width
+        print(resizeRatio)
         // Apply same ratio to both dimensions, in order to respect its aspect Ratio
         let size = image.size.applying(CGAffineTransform(scaleX: resizeRatio, y: resizeRatio))
         let hasAlpha = true

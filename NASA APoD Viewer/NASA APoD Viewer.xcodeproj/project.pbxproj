@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C537F06E24D2686200133B52 /* PhotoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537F06D24D2686200133B52 /* PhotoViewModelTests.swift */; };
+		C537F07124D269AB00133B52 /* PhotoViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537F07024D269AB00133B52 /* PhotoViewMock.swift */; };
+		C537F07324D26B4F00133B52 /* PhotoInfoServicesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537F07224D26B4F00133B52 /* PhotoInfoServicesMock.swift */; };
 		C598F75E24CF756C00242878 /* PhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598F75D24CF756C00242878 /* PhotoTableViewCellViewModel.swift */; };
 		C5CCC6E924CE027100BFE5BF /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */; };
 		C5CCC6EC24CE036D00BFE5BF /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCC6EB24CE036D00BFE5BF /* PhotoInfo.swift */; };
@@ -23,7 +26,22 @@
 		C5F434AE24CDDC8C00A2C621 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F434AC24CDDC8C00A2C621 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C537F06624D2551200133B52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5F4349624CDDC8A00A2C621 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5F4349D24CDDC8A00A2C621;
+			remoteInfo = "NASA APoD Viewer";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		C537F06124D2551200133B52 /* NASA APoD Viewer Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NASA APoD Viewer Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C537F06524D2551200133B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C537F06D24D2686200133B52 /* PhotoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModelTests.swift; sourceTree = "<group>"; };
+		C537F07024D269AB00133B52 /* PhotoViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewMock.swift; sourceTree = "<group>"; };
+		C537F07224D26B4F00133B52 /* PhotoInfoServicesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoServicesMock.swift; sourceTree = "<group>"; };
 		C598F75D24CF756C00242878 /* PhotoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		C5CCC6E824CE027100BFE5BF /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		C5CCC6EB24CE036D00BFE5BF /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
@@ -43,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C537F05E24D2551200133B52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5F4349B24CDDC8A00A2C621 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,6 +78,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C537F06224D2551200133B52 /* NASA APoD Viewer Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C537F06B24D2552700133B52 /* Module */,
+				C537F06524D2551200133B52 /* Info.plist */,
+			);
+			path = "NASA APoD Viewer Tests";
+			sourceTree = "<group>";
+		};
+		C537F06B24D2552700133B52 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				C537F06C24D2552F00133B52 /* Photo */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		C537F06C24D2552F00133B52 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				C537F06F24D2697100133B52 /* Mocks */,
+				C537F06D24D2686200133B52 /* PhotoViewModelTests.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		C537F06F24D2697100133B52 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C537F07024D269AB00133B52 /* PhotoViewMock.swift */,
+				C537F07224D26B4F00133B52 /* PhotoInfoServicesMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		C5CCC6E524CE020800BFE5BF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				C5F434A024CDDC8A00A2C621 /* NASA APoD Viewer */,
+				C537F06224D2551200133B52 /* NASA APoD Viewer Tests */,
 				C5F4349F24CDDC8A00A2C621 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				C5F4349E24CDDC8A00A2C621 /* NASA APoD Viewer.app */,
+				C537F06124D2551200133B52 /* NASA APoD Viewer Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +212,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C537F06024D2551200133B52 /* NASA APoD Viewer Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C537F06A24D2551200133B52 /* Build configuration list for PBXNativeTarget "NASA APoD Viewer Tests" */;
+			buildPhases = (
+				C537F05D24D2551200133B52 /* Sources */,
+				C537F05E24D2551200133B52 /* Frameworks */,
+				C537F05F24D2551200133B52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C537F06724D2551200133B52 /* PBXTargetDependency */,
+			);
+			name = "NASA APoD Viewer Tests";
+			productName = "NASA APoD Viewer Tests";
+			productReference = C537F06124D2551200133B52 /* NASA APoD Viewer Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C5F4349D24CDDC8A00A2C621 /* NASA APoD Viewer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5F434B224CDDC8C00A2C621 /* Build configuration list for PBXNativeTarget "NASA APoD Viewer" */;
@@ -178,6 +258,10 @@
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Ivo Dutra";
 				TargetAttributes = {
+					C537F06024D2551200133B52 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = C5F4349D24CDDC8A00A2C621;
+					};
 					C5F4349D24CDDC8A00A2C621 = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -197,11 +281,19 @@
 			projectRoot = "";
 			targets = (
 				C5F4349D24CDDC8A00A2C621 /* NASA APoD Viewer */,
+				C537F06024D2551200133B52 /* NASA APoD Viewer Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C537F05F24D2551200133B52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5F4349C24CDDC8A00A2C621 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +327,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C537F05D24D2551200133B52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C537F07124D269AB00133B52 /* PhotoViewMock.swift in Sources */,
+				C537F07324D26B4F00133B52 /* PhotoInfoServicesMock.swift in Sources */,
+				C537F06E24D2686200133B52 /* PhotoViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5F4349A24CDDC8A00A2C621 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +358,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C537F06724D2551200133B52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5F4349D24CDDC8A00A2C621 /* NASA APoD Viewer */;
+			targetProxy = C537F06624D2551200133B52 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		C5F434AC24CDDC8C00A2C621 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -268,6 +378,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C537F06824D2551200133B52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NASA APoD Viewer Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ivo-Dutra.NASA-APoD-Viewer-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NASA APoD Viewer.app/NASA APoD Viewer";
+			};
+			name = Debug;
+		};
+		C537F06924D2551200133B52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NASA APoD Viewer Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ivo-Dutra.NASA-APoD-Viewer-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NASA APoD Viewer.app/NASA APoD Viewer";
+			};
+			name = Release;
+		};
 		C5F434B024CDDC8C00A2C621 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -419,6 +567,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C537F06A24D2551200133B52 /* Build configuration list for PBXNativeTarget "NASA APoD Viewer Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C537F06824D2551200133B52 /* Debug */,
+				C537F06924D2551200133B52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C5F4349924CDDC8A00A2C621 /* Build configuration list for PBXProject "NASA APoD Viewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
