@@ -19,8 +19,6 @@ protocol ViewCodable {
     func render()
     /// Setup any acessibility to the view
     func setupAcessibilityIdentifiers()
-    /// Updates view usually when viewModel was set
-    func updateView()
     /// This method builds the view using all the other methods fom the protocol
     func setupView()
 }
@@ -28,7 +26,6 @@ protocol ViewCodable {
 extension ViewCodable {
 
     // Sometimes will not be implemented
-    func configure () { }
     func setupAcessibilityIdentifiers() { }
 
     func setupView() {

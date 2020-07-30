@@ -16,6 +16,7 @@ protocol PhotoViewModelDelegate: class {
 /// So that we can UnitTest
 protocol PhotoViewModelProtocol {
     var delegate: PhotoViewModelDelegate? { get set }
+    var navigationDelegate: PhotoNavigationDelegate? { get set }
     var photoInfos: [String: PhotoInfo] { get set }
     var images: [UIImage?] { get set }
     var days: [String] { get set }
@@ -26,6 +27,7 @@ class PhotoViewModel: PhotoViewModelProtocol {
     // MARK: - Properties
     
     weak var delegate: PhotoViewModelDelegate?
+    weak var navigationDelegate: PhotoNavigationDelegate?
     var photoInfoServices: PhotoInfoServicesProtocol
     var photoInfos: [String: PhotoInfo]
     var images: [UIImage?] {
@@ -38,8 +40,9 @@ class PhotoViewModel: PhotoViewModelProtocol {
 
     // MARK: - Init
 
-    init(delegate: PhotoViewModelDelegate, service: PhotoInfoServicesProtocol) {
+    init(delegate: PhotoViewModelDelegate, service: PhotoInfoServicesProtocol, navigation: PhotoNavigationDelegate) {
         self.delegate = delegate
+        self.navigationDelegate = navigation
         self.photoInfoServices = service
 
         photoInfos = [:]
@@ -96,6 +99,12 @@ class PhotoViewModel: PhotoViewModelProtocol {
                 imageTask.resume()
             }
         }
+    }
+
+    // MARK: - Navigation
+
+    func goToDetail(fromPhoto info: PhotoInfo) {
+        navigationDelegate?.goToDetail(fromPhoto: info)
     }
 
     // MARK: - UI Image Helper

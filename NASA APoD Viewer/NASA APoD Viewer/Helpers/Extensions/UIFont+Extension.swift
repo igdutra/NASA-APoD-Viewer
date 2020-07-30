@@ -6,7 +6,6 @@
 //  Copyright © 2020 Ivo Dutra. All rights reserved.
 //
 
-
 import UIKit
 
 extension UIFont {

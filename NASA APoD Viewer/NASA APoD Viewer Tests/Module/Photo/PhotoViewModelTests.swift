@@ -14,19 +14,22 @@ class PhotoViewModelTests: XCTestCase {
     var sut: PhotoViewModel!
     var photoViewMock: PhotoViewMock!
     var servicesMock: PhotoInfoServicesMock!
+    var navigationMock: PhotoNavigationDelegateMock!
 
     override func setUp() {
         super.setUp()
         photoViewMock = PhotoViewMock()
         servicesMock = PhotoInfoServicesMock()
+        navigationMock = PhotoNavigationDelegateMock()
 
-        sut = PhotoViewModel(delegate: photoViewMock, service: servicesMock)
+        sut = PhotoViewModel(delegate: photoViewMock, service: servicesMock, navigation: navigationMock)
     }
 
     override func tearDown() {
         sut = nil
         photoViewMock = nil
         servicesMock = nil
+        navigationMock = nil
         super.tearDown()
     }
 
