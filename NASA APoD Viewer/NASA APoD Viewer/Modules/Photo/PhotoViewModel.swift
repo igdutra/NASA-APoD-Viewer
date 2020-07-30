@@ -16,8 +16,10 @@ protocol PhotoViewModelDelegate: class {
 /// So that we can UnitTest
 protocol PhotoViewModelProtocol {
     var delegate: PhotoViewModelDelegate? { get set }
-    var days: [String] { get set }
+    var navigationDelegate: PhotoNavigationDelegate? { get set }
+    var photoInfos: [String: PhotoInfo] { get set }
     var images: [UIImage?] { get set }
+    var days: [String] { get set }
 }
 
 class PhotoViewModel: PhotoViewModelProtocol {
@@ -25,8 +27,9 @@ class PhotoViewModel: PhotoViewModelProtocol {
     // MARK: - Properties
     
     weak var delegate: PhotoViewModelDelegate?
+    weak var navigationDelegate: PhotoNavigationDelegate?
     var photoInfoServices: PhotoInfoServicesProtocol
-    var photoInfos: [PhotoInfo]
+    var photoInfos: [String: PhotoInfo]
     var images: [UIImage?] {
         didSet {
             // DataSource must be reloaded when a image is set
@@ -37,11 +40,12 @@ class PhotoViewModel: PhotoViewModelProtocol {
 
     // MARK: - Init
 
-    init(delegate: PhotoViewModelDelegate, service: PhotoInfoServicesProtocol) {
+    init(delegate: PhotoViewModelDelegate, service: PhotoInfoServicesProtocol, navigation: PhotoNavigationDelegate) {
         self.delegate = delegate
+        self.navigationDelegate = navigation
         self.photoInfoServices = service
 
-        photoInfos = []
+        photoInfos = [:]
         images = []
 
         // Dates used to perform request
@@ -83,7 +87,7 @@ class PhotoViewModel: PhotoViewModelProtocol {
         photoInfoServices.fetchPhotoInfo(onDay: day) { (infos) in
             if let info = infos {
                 // Save photo details
-                self.photoInfos.append(info)
+                self.photoInfos[day] = info
                 // Request the image
                 let imageTask = URLSession.shared.dataTask(with: info.url) { (data, _, _) in
                     guard let data = data, let image = UIImage(data: data) else { return }
@@ -95,6 +99,12 @@ class PhotoViewModel: PhotoViewModelProtocol {
                 imageTask.resume()
             }
         }
+    }
+
+    // MARK: - Navigation
+
+    func goToDetail(fromPhoto info: PhotoInfo) {
+        navigationDelegate?.goToDetail(fromPhoto: info)
     }
 
     // MARK: - UI Image Helper
